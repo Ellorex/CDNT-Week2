@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { IntroComponent } from './intro/intro.component';
 import { TeamComponent } from './team/team.component';
 import { TeamsComponent } from './teams/teams.component';
+import { CupComponent } from './cup/cup.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { TeamsComponent } from './teams/teams.component';
     AppComponent,
     IntroComponent,
     TeamComponent,
-    TeamsComponent
+    TeamsComponent,
+    CupComponent
   ],
   imports: [
     BrowserModule,
