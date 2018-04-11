@@ -1,0 +1,26 @@
+.logo {
+    max-width: 80%;
+    max-width: 250px;
+}
+.block--team--title {
+    margin: 30px auto;
+    padding: 5px 20px;
+    font-size: 40px;
+    font-weight: lighter;
+    text-align: center;
+    border: 1px solid #80808066;
+    border-radius: 10px;
+}
+table tr td {
+    text-align: center;
+    vertical-align: middle; 
+    height: 150px;
+}
+.old {
+    font-weight: bold;
+    color: red;
+}
+.team {
+    margin-bottom: 10px;
+   
+}

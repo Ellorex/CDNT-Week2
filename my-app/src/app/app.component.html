@@ -2,51 +2,9 @@
   <div>
     <h1 style="text-align:center">{{ title }}</h1>
 
-    <div>
-      <input type="checkbox" name="admin" id="admin" (click)="admin_status = !admin_status">
-      <label for="admin">Admin</label>
-    </div>
 
-    <button name="button" type="button" class="button" (click)="test()">Afficher</button>
-    <button type="button" name="button" class="button" (click)="reset()">Effacer</button>
-
-    <p>{{ message }}</p>
-    <p>{{ message2 }}</p>
-
-    <input type="text" name="" [value]="title" (keyup)="onKeyUp($event)"> 
-    <!-- Angular va créer une propriété name qui prendra comme valeur celle du champs -->
-    <div>
-      <input type="text" [(ngModel)]="name">
-      <p>{{ name }}</p>
-    </div>
-    <!-- Lorsque ngModel est utilisé, favoriser la déclaration explicite dans le .ts également -->
-    <br>
-    <div class="liste">
-      <h3>Liste des alternants</h3>
-      <p *ngFor="let stagiaire of stagiaires">{{ stagiaire }}</p>
-      
-      <select>
-        <option *ngFor="let topic of topics"> {{ topic }}</option>
-      </select>
-    </div>
   </div>
-  <section class="notes">
-    <h3>Intro</h3>
-    <p>Quand sa portée n'est pas précisée, une propriété est par défaut publique. Deux paires d'accolades permettent d'accéder à la valeur associée à une propriété. Une paire de parenthèses dans un élément HTML permet d'injecter un événement (directive).</p>
-    <p>Pour typer au moment de la déclaration, <b>propriété: typage = valeur;</b>
-      exemple : nb1: number = 17;
-      <br>5 types primitifs : string, number, boolean, undefined & null. Pas de majuscule pour les types primitifs. 
-      <br>Pour les instanciations de class : <b>propriété: Class = valeur;</b>
-      <br>Incohérence non bloquante, ES5 ignore les types. Les types sont facultatifs
-      <br>Une classe par fichier
-    </p>
-  <div class="Voc">
-    <h3>Voc</h3>
-    <ul>
-      <li><b>linter :</b> vérificateur de code de l'éditeur</li>
-      <li><b>Contrôle (UI):</b> tout élément présent par exemple dans un formulaire client</li>
-      <li><b>One-way data binding :</b> lorsque la récupération / le transfert d'une donnée n'est possible que dans un sens (que de la classe vers la vue ou l'inverse)</li>
-    </ul> 
-  </div>
-  </section>
+ 
 </div>
+
+<intro></intro>

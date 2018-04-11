@@ -1,0 +1,13 @@
+.logo {
+    width: 70%;
+    max-width: 150px;
+    max-height: 150px;
+}
+.block--team--title {
+    margin: 30px auto;
+    font-size: 40px;
+    font-weight: lighter;
+    padding: 5px 20px;
+    border: 1px solid #80808066;
+    border-radius: 10px;
+}

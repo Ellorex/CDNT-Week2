@@ -3,6 +3,11 @@ export class Book {
     private author: string;
     private year: number;
 
+    constructor(title: string, author: string, year: number) {
+        this.setTitle(title);
+        this.setAuthor(author);
+        this.setYear(year);
+    }
     public getTitle() {
         return this.title;
     }
