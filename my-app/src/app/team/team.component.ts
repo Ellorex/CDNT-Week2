@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap, Params} from '@angular/router';
 import { Team } from '../../model/Team';
-import { Input } from '@angular/core';
+import { TeamService } from '../team.service';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'team',
@@ -12,10 +14,22 @@ export class TeamComponent implements OnInit {
 
   @Input('data-team')team: Team;
 
-  constructor() { }
+  constructor(
+    private teamService: TeamService, 
+    private router: Router, 
+    private activatedRoute: ActivatedRoute
+  ) { }
 
   ngOnInit() {
-
+    if (!this.team) {
+      // si team n'est pas défini, on demande au service de nous donner l'info manquante liée au paramètre url (le nom de l'équipe)
+      
+      //Récupération du paramètre url
+      this.activatedRoute.params
+        .subscribe(item => this.team = this.teamService.getTeamByName(item.name));
+    }
+    
+    // console.log(this.activatedRoute.params);
   }
 
 }

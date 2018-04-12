@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Book } from '../../model/Book';
+import { TeamService } from '../team.service';
 
 @Component({
     selector: 'intro',
@@ -46,5 +47,9 @@ export class IntroComponent {
     }
     onKeyUp(e) {
       this.message2 += e.key;
+    }
+
+    // DI (Dependency Injection), le constructeur de la classe IntroComponent instancie la classe TeamService. Les objets IntroComponent disposent d'une propriété this.teamservice
+    constructor(private teamService: TeamService) {
     }
 }

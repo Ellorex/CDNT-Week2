@@ -1,10 +1,13 @@
 <div class="main">
+  <nav class="nav nav-tabs">
+    <li class="nav-item"><a class="nav-link" routerLink="">Accueil</a></li>
+    <li class="nav-item"><a class="nav-link" routerLink="intro">Intro</a></li>
+    <li class="nav-item"><a class="nav-link" routerLink="teams">Equipes</a></li>
+    <li class="nav-item"><a class="nav-link" routerLink="admin">Admin</a></li>
+  </nav>
   <div>
     <h1 style="text-align:center">{{ title }}</h1>
-
-
   </div>
- 
+
+<router-outlet></router-outlet>
 </div>
-<teams></teams>
-<!-- <intro></intro> -->

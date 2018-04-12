@@ -1,0 +1,36 @@
+<div>
+  <h2>Ajouter une équipe</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <input type="text" id="name" class="form-control" [(ngModel)]="team.name">
+          <label for="name">Nom de l'équipe</label>
+        </div>
+        <div class="form-group">
+          <select class="form-control" [(ngModel)]="team.country">
+            <option disabled>Choisir un pays</option>
+              <option *ngFor="let country of countries" >{{country}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="text" id="stadium" class="form-control" [(ngModel)]="team.stadium">
+          <label for="stadium">Stade</label>
+        </div>
+        <div class="form-group">
+          <input type="text" id="coach" class="form-control" [(ngModel)]="team.coach">
+          <label for="coach">Entraîneur</label>
+        </div>
+        <div class="form-group">
+          <input type="number" id="created" min="1800" max="2020" value="2000" class="form-control" [(ngModel)]="team.founded">
+          <label for="created">Année de création</label>
+        </div>
+        <div class="form-group">
+          <input type="number" id="cup" class="form-control" [(ngModel)]="team.cup">
+          <label for="cup">Nombre de coupes remportées</label>
+        </div>
+        <input type="submit" value="Valider" class="btn" (click)="onSubmit()">
+    </div>
+  </div>
+  <div class="col-md-6">
+  </div>
+</div>

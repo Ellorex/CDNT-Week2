@@ -1,6 +1,7 @@
 <h2 class="block--team--title">Liste des équipes</h2>
 
 <button type="button" class="btn" (click)="addTeam()">Ajouter une équipe</button>
+
 <div>
   <span>Affichage</span>
   <select [(ngModel)]="team_display">
@@ -31,7 +32,7 @@
   <!-- <tr *ngFor="let team of teams" [hidden]= "countrySelected != team.country"></tr> -->
     <tr *ngFor="let team of teamsfiltered">
     <td><img src="{{ team.getLogoUrl() }}" alt="logo de {{ team.name }}" class="logo"></td>
-    <td>{{ team.name }}</td>
+    <td><a routerLink="/teams/{{team.name}}">{{ team.name }}</a></td>
     <td>{{ team.country }}</td>
     <td>{{ team.stadium }}</td>
     <td>{{ team.coach }}</td>
