@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-6">
+    <select [(ngModel)]="positionSelected" (change)="filterPlayerByPosition()" class="custom-select">
+      <option value="0">Tous les postes</option>
+      <option *ngFor="let position of positions">{{position}}</option>
+    </select>
+  </div>
+  <div class="col-md-6">
+    <div class="form-group">
+      <select [(ngModel)]="clubSelected" class="custom-select">
+        <option value="0">Toutes les équipes</option>
+        <option></option>
+      </select>
+    </div>
+  </div>
+</div>
+<table class="table table-bordered">
+  <tr>
+    <th>Photo</th>
+    <th>Prénom</th>
+    <th>Nom</th>
+    <th>Club</th>
+    <th>Pays</th>
+    <th>Poste</th>
+  </tr>
+  <tr *ngFor="let p of playersfiltered">
+    <td><img src="{{ p.getPicUrl() }}" alt="photo de {{p.firstname}} {{p.lastname}}"></td>
+    <td>{{p.firstname}}</td>
+    <td>{{p.lastname}}</td>
+    <td>{{p.current_team}}</td>
+    <td>{{p.country}}</td>
+    <td>{{p.position}}</td>
+  </tr>
+  
+</table>

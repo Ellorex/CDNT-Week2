@@ -6,5 +6,9 @@ export const COUNTRIES: string[] = [
     'Espagne',
     'Japon'
 ];
+export const POSITIONS: string[] = [
+    'Gardien',
+    'Attaquant'
+];
 
 export const LAYOUTS: string[] = ['fiche', 'tableau'];

@@ -18,6 +18,11 @@ export class Team {
         this.country = country;
     }
     getLogoUrl() {
-        return this.logo_dir + this.logo;
+        let external = this.logo.substr(0, 4) == 'http';
+        if (external) {
+            return this.logo;
+        } else {
+           return this.logo_dir + this.logo; 
+        }
     }
 }

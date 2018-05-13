@@ -1,22 +1,22 @@
 <h2 class="block--team--title">Liste des équipes</h2>
 
-<button type="button" class="btn" (click)="addTeam()">Ajouter une équipe</button>
+<div class="row">
+  <div class="col-md-6">
+    <span>Affichage</span>
+    <select [(ngModel)]="team_display">
+      <option value="fiche">Fiches</option>
+      <option value="tableau">Tableau</option>
+    </select>
+  </div>
 
-<div>
-  <span>Affichage</span>
-  <select [(ngModel)]="team_display">
-    <option value="fiche">Fiches</option>
-    <option value="tableau">Tableau</option>
-  </select>
+  <div class="col-md-6">
+    <select [(ngModel)]="countrySelected" (change)="filterTeam()" [hidden]="team_display == 'fiche'" >
+      <option value="0">Tous les pays</option>
+      <option *ngFor="let country of countries">{{country}}</option>
+    </select>
+    <span [hidden]="team_display == 'fiche' || countrySelected == '0'" >{{teamsfiltered.length}} équipe(s) trouvée(s)</span>
+  </div>
 </div>
-<div>
-  <select [(ngModel)]="countrySelected" (change)="filterTeam()">
-    <option value="0">Tous les pays</option>
-    <option *ngFor="let country of countries">{{country}}</option>
-  </select>
-  <span>{{teamsfiltered.length}} équipe(s) trouvée(s)</span>
-</div>
-
 <team [hidden]="team_display == 'tableau'" [data-team]="team" *ngFor="let team of teams"></team>
 
 <table [hidden]="team_display == 'fiche'" class="table table-bordered table-stripped">
@@ -40,12 +40,3 @@
     <td><cup [nb]="team.cup"></cup></td>
   </tr>
 </table>  
-<select [(ngModel)]="nbSelected">
-  <option value="0" disabled>Filtrer par nombre de coupes</option>
-  <option>1</option>
-  <option>2</option>
-  <option>3</option>
-  <option>4</option>
-  <option>5</option>
-</select>
-<cup [nb]="nbSelected"></cup>
