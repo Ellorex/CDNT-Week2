@@ -113,5 +113,10 @@ app.use(function(req, res, next) {
 // Routes
 app.get('/teams', (req, res) => res.json(teams));
 app.get('/players', (req, res) => res.json(players));
+app.get('/teams/:team/players', (req, res) => {
+  var team = req.params.team;
+  var playersFiltered = players.filter(player => player.current_team == team);
+  return res.json(playersFiltered);
+});
 
 app.listen(5000, () => console.log('Serveur écoute le port 5000...'));

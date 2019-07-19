@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Team } from '../model/Team';
 import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 const URL_SERVER ='http://localhost:5000';
 
@@ -37,5 +39,9 @@ export class TeamService {
   
   public setTeams(teams: Team[]) {
     this.teams = teams;
+  }
+
+  public getPlayerByTeam(name: string): Observable<any> {
+    return this.http.get(URL_SERVER + '/teams/' + name + '/players');
   }
 }

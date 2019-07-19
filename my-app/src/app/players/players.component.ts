@@ -21,11 +21,14 @@ export class PlayersComponent implements OnInit {
   ngOnInit() {
     this.playerService.getPlayersFromServer()
       .subscribe(res => {
-        res.forEach(element => {
-          let player:Player = new Player(element.id ,element.pic, element.firstname, element.lastname, element.current_team, element.country, element.position);
-          this.playersfiltered.push(player);
+        res.forEach(player => {
+          if (this.teams.indexOf(player.current_team) == -1) {
+            this.teams.push(player.current_team);
+          }
 
-          this.positions = element.position;
+          if(this.positions.indexOf(player.position) == -1) {
+            this.positions.push(player.position);
+          }
         });
         this.playerService.setPlayers(this.players);
         
